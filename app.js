@@ -8,7 +8,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://sattarovmyktybek:Test123@cluster0.m7ttwoc.mongodb.net/todolistDB", {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/todolistDB', {useNewUrlParser: true});
 
 const itemsSchema = {
   name: String
@@ -120,7 +120,7 @@ app.post("/delete", function(req, res){
 
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 8000;
+  port = 3000;
 }
 
 app.listen(port, function () {
